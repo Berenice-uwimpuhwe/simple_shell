@@ -148,7 +148,7 @@ int _forkprocess(char **av, char *buffer, char *fullpathbuffer)
 		perror("Error");
 		exit(1);
 	}
-	else
+	if (pid == 0)
 	{
 		result = execve(fullpathbuffer, av, environ);
 		if (result == -1)
